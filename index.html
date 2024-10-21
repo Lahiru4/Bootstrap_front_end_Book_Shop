@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linex pos system Login Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/alert.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+          integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+        *, html, body {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+        }
+
+        .container {
+            width: 500px;
+            height: 500px;
+            display: grid;
+            grid-template-columns: 100%;
+            grid-template-areas: "login";
+            /*box-shadow: 0 0 17px 10px rgb(0 0 0 / 30%);*/
+            border-radius: 20px;
+            background: white;
+            overflow: hidden;
+        }
+
+        .login {
+            grid-area: login;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background: white;
+            font-size: 22px;
+        }
+
+        .login h3.title {
+            margin: 15px 0;
+        }
+        .text-input {
+            background: #e6e6e6;
+            height: 40px;
+            display: flex;
+            width: 60%;
+            align-items: center;
+            border-radius: 10px;
+            padding: 0 15px;
+            margin: 5px 0;
+        }
+
+        .text-input input {
+            background: none;
+            border: none;
+            outline: none;
+            width: 100%;
+            height: 100%;
+            margin-left: 10px;
+            font-size: 18px;
+        }
+
+        .text-input i {
+            color: #686868;
+        }
+
+        ::placeholder {
+            color: #9a9a9a;
+        }
+
+        .login-btn {
+            width: 65%;
+            padding: 10px;
+            color: white;
+            background: linear-gradient(to right, #3a86dd, #3a86dd, #000000);
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        a {
+            font-size: 16px;
+            color: #9a9a9a;
+            cursor: pointer;
+            user-select: none;
+            text-decoration: none;
+        }
+
+        a.forgot {
+            margin-top: 15px;
+        }
+        .login h1 span{
+            color: #3a86dd;
+            font-size: 50px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<div id="notification-area"></div>
+<body>
+<div class="container">
+    <div class="login">
+        <h1>Line<span>X</span> System</h1>
+        <h2>POS</h2>
+        <br>
+        <h3 class="title">User Login</h3>
+        <br>
+        <div class="text-input">
+            <i class="ri-user-fill"></i>
+            <input id="username" type="text" placeholder="Username">
+        </div>
+        <br>
+        <div class="text-input">
+            <i class="ri-lock-fill"></i>
+            <input id="password" type="password" placeholder="Password">
+        </div>
+        <br>
+        <button id="loginBtn" class="login-btn">LOGIN</button>
+        <br>
+        <br>
+    </div>
+    <br>
+</div>
+<footer><p style="text-align: right;position: absolute;bottom: 15px;right: 35px">LineX<br> best software solution contact us<br> Hotline +94 787 969 637</p>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script type="module" src="/script/logIn.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+</body>
+</html>

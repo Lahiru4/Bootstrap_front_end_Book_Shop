@@ -1,0 +1,13 @@
+#order-log-wrapper{
+    padding: 50px;
+}
+
+#orderlogSearch{
+    outline: none;
+    width: 40%;
+    height: 35px;
+    border-radius: 5px;
+    border: 1px solid #2e2e2e;
+    position: relative;
+    bottom: 10px;
+}

@@ -1,0 +1,30 @@
+.table{
+    width: 100%;
+}
+.table-hed{
+    padding: 50px
+}
+
+.table_colour_set>thead tr th{
+    background-color: #0077FF;
+    color: #F6F6F9;
+    font-size: 18px;
+    font-weight: 500;
+}
+.table_colour_set>thead tr th:first-child{
+    border-radius: 10px 0 0 0 ;
+}
+.table_colour_set>thead tr th:last-child{
+    border-radius: 0 10px 0 0 ;
+}
+.table_colour_set tbody tr td{
+    font-size: 16px;
+}
+.table_colour_set tbody tr:hover td{
+    background-color: rgba(58, 134, 221, 0.73);
+    cursor: pointer;
+}
+
+#stock-tbody i:hover{
+    color: #D32F2F;
+}

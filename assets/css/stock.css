@@ -1,0 +1,64 @@
+.add-customer-input{
+    border: #181a1e solid 0.5px;
+    border-radius: 5px;
+    padding: 8px 10px;
+    margin-bottom: 20px;
+}
+#customer-input-field-bg{
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+}
+#stock_from{
+    width: 90%;
+    display: none;
+}
+#stock_save_btn{
+    text-align: right;
+}
+#stock-log-wrapper ,#user-log-wrapper{
+    width: 90%;
+}
+#stock-log-wrapper-box ,#user-log-wrapper-box{
+    max-height: 600px;
+    overflow-y: auto;
+    position: relative;
+    left: -10px;
+}
+
+#user-log-wrapper-box::-webkit-scrollbar {
+    width: 8px;
+}
+#stock-log-wrapper-box::-webkit-scrollbar {
+    width: 8px;
+}
+#stock-log-wrapper-box::-webkit-scrollbar-thumb {
+    background-color: #59a1f3;
+    border-radius: 5px;
+}
+#user-log-wrapper-box::-webkit-scrollbar-thumb {
+    background-color: #59a1f3;
+    border-radius: 5px;
+}
+#stock_from div label{
+    color: #3a86dd;
+}
+
+.angry-grid {
+    display: grid;
+
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 10px;
+    height: 85%;
+
+}
+#stock_from div div{
+    margin: 20px;
+}
+#stock_from div button{
+    margin: 20px;
+    width: 100px;
+    text-align: center;
+}

@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+          integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/table.css">
+    <link rel="stylesheet" href="assets/css/billing.css">
+    <link rel="stylesheet" href="assets/css/invoice.css">
+    <link rel="stylesheet" href="assets/css/alert.css">
+    <title>Linex.lk</title>
+</head>
+
+<body>
+<!--alert-->
+<div id="notification-area"></div>
+<!--alert-->
+
+<!-- Sidebar -->
+<div class="sidebar">
+    <a href="#" class="logo">
+        <i class=''></i>
+        <div class="logo-name"><span>Line</span>X
+            pos
+        </div>
+    </a>
+    <ul class="side-menu">
+        <li class="active"><a><i class='bx bxs-dashboard'></i>Bulling</a></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li><a><i class='bx bx-cog'></i>Settings</a></li>
+        <li id="log_out" onclick="logOut()"><a href="#" class="logout"><i class='bx bx-log-out-circle'></i>Logout</a>
+        </li>
+    </ul>
+
+</div>
+<!-- End of Sidebar -->
+
+<!-- Main Content -->
+<div class="content">
+    <!-- Navbar -->
+    <nav>
+        <i class='bx bx-menu' id="hamb-menu"></i>
+        <form action="#">
+            <div class="form-input">
+                <input type="search" placeholder="Search...">
+                <button class="search-btn" type="submit"><i class='bx bx-search'></i></button>
+            </div>
+        </form>
+        <input type="checkbox" id="theme-toggle" hidden>
+        <label for="theme-toggle" class="theme-toggle"></label>
+        <a href="#" class="notif">
+            <i class='bx bx-bell'></i>
+            <span class="count">0</span>
+        </a>
+        <a href="#" class="profile">
+            <img src="assets/images/logo.jpg">
+        </a>
+    </nav>
+
+    <!-- End of Navbar -->
+
+    <main id="Dashboard">
+        <div class="header">
+            <div class="left">
+                <h1>Bulling</h1>
+                <ul class="breadcrumb">
+                    <li><a href="#">
+                        Dashboard
+                    </a></li>
+                    /
+                    <li><a href="#" class="active">Home</a></li>
+                </ul>
+            </div>
+        </div>
+        <div>
+            <ul class="insights">
+                <li id="phLi">
+                    <div class="row col-lg-12 col-md-12 col-12 col-sm-12 col-xl-12 col-xxl-12">
+                        <div class="row col-lg-7 col-md-7 col-12 col-sm-12 col-xl-7 col-xxl-7"
+                             id="billing-stock-tbl-left">
+                            <input type="text" placeholder="Search Product" class="text" id="items_search">
+                            <div id="pharmacy-tbl-wrapper">
+                                <table class="table table_colour_set" id="billing-stock-tbl">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col">Code</th>
+                                        <th scope="col">Description</th>
+                                        <th scope="col">Quantity</th>
+                                        <th scope="col">Market Price</th>
+                                        <th scope="col">Price</th>
+                                        <th scope="col">Id Date</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody id="billing-stock-tbody">
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="row col-lg-5 col-md-5 col-12 col-sm-12 col-xl-5 col-xxl-5">
+                            <div>
+                                <label id="invoice_number" style="font-size: 22px;color:#3a86dd;">Invoice Number
+                                    :</label>
+                                <br>
+                                <br>
+                                <input type="text" placeholder="  Customer Name" class="text" style="left: 2px"
+                                       id="customer_name"><label style="font-size: 23px;position: relative;left: 10%"
+                                                                 id="billItems">Items : 00</label>
+
+                                <table class="table table_colour_set" id="table-bill">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col" style="background-color: #0f0f0f">Item</th>
+
+                                        <th scope="col" style="background-color: #0f0f0f">Quantity</th>
+                                        <th scope="col" style="background-color: #0f0f0f">MRP</th>
+                                        <th scope="col" style="background-color: #0f0f0f">Total</th>
+                                        <th scope="col" style="background-color: #0f0f0f;">- Discount</th>
+                                        <th scope="col" style="background-color: #0f0f0f">Amount</th>
+                                        <th scope="col" style="background-color: #0f0f0f"><i
+                                                class="fa-solid fa-trash-can"></i></th>
+                                    </tr>
+                                    </thead>
+                                    <tbody id="bill_table_boday">
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="container">
+                                <lable style="text-align: left;font-size: 20px;font-weight: inherit;">Total Discount :</lable>
+                                <lable style="text-align: left;font-size: 20px;font-weight: inherit;" id="totalDiscount-lbl">Rs. 00 .00</lable>
+
+                                <lable class="tot_lable">Total</lable>
+                                <div style="display: inline-block">
+                                    <span style="font-size: 20px">Rs.</span>
+                                    <lable class="tot_lable" id="billing-Total-lbl">00</lable>
+                                    <span style="font-size: 20px">.00</span>
+                                </div>
+
+
+                                <lable class="tot_lable">Bill Discount</lable>
+
+                                <div>
+                                    <input type="number" class="text2"
+                                           style="font-size: 17px;width: 100%; text-align: left"
+                                           id="totDesi-count" placeholder="    %">
+                                    <div style="display:inline-block;">
+                                        <span style="font-size: 20px">Rs.</span>
+                                        <label id="totDesi-count_rs">00</label>
+                                        <span style="font-size: 20px">.00</span>
+                                    </div>
+
+
+                                </div>
+                                <lable class="tot_lable">Grand Total</lable>
+                                <div style="display: inline-block">
+                                    <span style="font-size: 20px">Rs.</span>
+                                    <lable class="tot_lable" id="billing-subTotal-lbl">00</lable>
+                                    <span style="font-size: 20px">.00</span>
+                                </div>
+
+
+                                <lable class="tot_lable">Pay Amount</lable>
+                                <input type="number" class="text2" style="font-size: 17px;width: 100%; text-align: left"
+                                       id="payAmount" placeholder="   00">
+
+                                <lable class="tot_lable">Balance <span></span></lable>
+
+                                <div style="display: inline-block">
+                                    <span style="font-size: 20px">Rs.</span>
+                                    <lable class="tot_lable" id="billing-balance-lbl">00</lable>
+                                    <span style="font-size: 20px">.00</span>
+                                </div>
+
+                                <hr>
+                                <hr>
+                                <select class="form-control" id="paymentMethode">
+                                    <option style="color: #2ECC71">cash (කැශ්)</option>
+                                    <option style="color: #3a86dd">card (කාඩ්)</option>
+                                </select>
+                                <div>
+                                    <button class="Btn" onclick="payOnAction()" id="payOnButton">
+                                        Pay
+                                        <svg class="svgIcon" viewBox="0 0 576 512">
+                                            <path d="M512 80c8.8 0 16 7.2 16 16v32H48V96c0-8.8 7.2-16 16-16H512zm16 144V416c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V224H528zM64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm56 304c-13.3 0-24 10.7-24 24s10.7 24 24 24h48c13.3 0 24-10.7 24-24s-10.7-24-24-24H120zm128 0c-13.3 0-24 10.7-24 24s10.7 24 24 24H360c13.3 0 24-10.7 24-24s-10.7-24-24-24H248z"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div>
+                                <input type="number" class="text"
+                                       style="position: relative;top: 20px;left: 0;text-align: center"
+                                       placeholder="User Id" id="user_id"><label
+                                    style="font-size: 22px;color:#3a86dd;position: relative;top: 20px"
+                                    id="setUserName"></label>
+                                <div>
+                                    <button class="Btn" onclick="endSalle()" id="endSalle"
+                                            style="position: relative; top: 50px;width: 150px">
+                                        End Today salle
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div id="invoice" style="display: block">
+            <h1 id="bill_shop_name"
+                style="text-align: center;font-family: 'Open Sans', sans-serif;font-size: 30px;font-weight: 100">
+                <span style="font-family: 'Dancing Script', cursive;">SN</span> Simple Bookshop & Communication</h1>
+            <h2 id="bill_address" style="text-align: center;font-weight: inherit;">Galle road
+                Balapitiya.</h2>
+            <h3 id="bill_shop_number" style="text-align: center;font-weight: inherit;">Tel :
+                0769396053</h3>
+            <br>
+            <hr>
+            <label style="font-size: 20px;font-weight: inherit" id="date"></label>
+            <br>
+
+            <h3 style="text-align: left;font-weight: inherit;font-size: 20px" id="reportInvoiceNumber">Invoice Number
+                : </h3>
+            <h3 style="text-align: left;font-weight: inherit;font-size: 20px" id="items">Items : 00 </h3>
+            <h3 style="text-align: left;font-weight: inherit;font-size: 20px;display:none;" id="reportCustomerName">
+                Customer : </h3>
+            <h3 style="text-align: left;font-weight: inherit;font-size: 20px" id="report_cashier_name">cashier : </h3>
+            <hr>
+            <br>
+
+            <table id="reportBillTable" style="border-collapse: collapse;
+            width: 100%;">
+                <thead>
+                <tr style="border-bottom: #181a1e solid 1px">
+                    <th scope="col" style="font-weight: inherit;">ITEM</th>
+                    <th scope="col" style="text-align: center;font-weight: inherit;">QTY</th>
+                    <th scope="col" style="text-align: center;font-weight: inherit;">MRP</th>
+                    <th scope="col" style="text-align: center;font-weight: inherit;">TOTAL</th>
+                    <th scope="col" style="text-align: center;font-weight: inherit;">DISC PRICE</th>
+                    <th scope="col" style="text-align: center;font-weight: inherit;">AMOUNT</th>
+                </tr>
+                </thead>
+                <tbody id="reportBillTableBody">
+
+                </tbody>
+            </table>
+            <hr>
+
+            <div style="
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+grid-template-rows: repeat(5, 1fr);
+grid-column-gap: 0px;
+grid-row-gap: 0px;
+font-family: 'Open Sans', sans-serif;
+">
+                <lable style="text-align: left;font-size: 20px;font-weight: inherit;">Total Discount :</lable>
+                <lable style="text-align: left;font-size: 20px;font-weight: inherit;" id="totalDiscount-lbl">Rs. 00 .00</lable>
+
+
+                <lable style="text-align: left;font-size: 20px;font-weight: inherit;">Total :</lable>
+                <lable style="text-align: right;font-size: 20px;font-weight: inherit;"
+                       id="report_tot_amount">00
+                </lable>
+
+                <lable style="text-align: left;font-size: 20px;font-weight: bold;font-weight: inherit;">
+                    Discount :
+                </lable>
+                <lable style="text-align: right;font-size: 20px;font-weight: bold;font-weight: inherit;"
+                       id="report_discount">00.00
+                </lable>
+
+                <lable style="text-align: left;font-size: 20px;font-weight: inherit;">Grand Total :
+                </lable>
+                <lable style="text-align: right;font-size: 20px;font-weight: inherit;"
+                       id="reportGrandTotal">00.00
+                </lable>
+
+                <lable style="text-align: left;font-size: 20px;font-weight: inherit;">Pay Amount :
+                </lable>
+                <lable style="text-align: right;font-size: 20px;font-weight: inherit;"
+                       id="reportBillPayAmount">00.00
+                </lable>
+
+                <lable style="text-align: left;font-size: 20px;font-weight: inherit;">Balance :</lable>
+                <lable style="text-align: right;font-size: 20px;font-weight: inherit;"
+                       id="reportBillBalance">00.00
+                </lable>
+
+            </div>
+            <hr>
+            <h3 style="text-align: center;font-weight: inherit;font-size: 20px">Thank you For Visiting Us</h3>
+            <h3 style="text-align: center;font-weight: inherit;font-size: 20px">Goods sold are not returnable</h3>
+            <hr>
+            <h3 style="text-align: center;font-weight: inherit;font-size: 20px">Linex POS System 0787969637</h3>
+        </div>
+
+    </main>
+
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<script src="script/index.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="controller/Bulling.js"></script>
+<script>
+    function logOut() {
+        window.location.href = "index.html";
+    }
+
+    $('.logo-name').css('display', 'none');
+    var index = 1;
+    $('#hamb-menu').on('click', function () {
+        index++;
+        if (index % 2 == 0) {
+            $('.logo-name').css('display', 'block');
+        } else {
+            $('.logo-name').css('display', 'none');
+        }
+    });
+
+    $("#stock_logSearch").on("input", function () {
+        var filter = $(this).val().toUpperCase();
+        $("#stock-tbl tbody tr").each(function () {
+            var id = $(this).find("td:eq(1)").text();
+            var name = $(this).find("td:eq(2)").text();
+            var inDate = $(this).find("td:eq(8)").text();
+            if (id.toUpperCase().indexOf(filter) > -1 || name.toUpperCase().indexOf(filter) > -1 || inDate.toUpperCase().indexOf(filter) > -1) {
+                $(this).show();
+            } else {
+                $(this).hide();
+            }
+        });
+    });
+
+</script>
+
+</body>
+
+</html>

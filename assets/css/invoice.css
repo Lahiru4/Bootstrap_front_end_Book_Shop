@@ -1,0 +1,12 @@
+
+#bill_shop_name{
+    text-align: center;
+}
+#reportBillTableBody tr td{
+    font-size: 25px;
+}
+#invoice{
+    position: relative;
+    margin: auto;
+    width: 400px;
+}

@@ -1,0 +1,306 @@
+#phLi{
+    cursor: default;
+    height: 2500px;
+}
+#pharmacy-details-left{
+    padding: 50px;
+}
+#pharmacy-tbl-wrapper{
+    height: 600px;
+    overflow: hidden;
+}
+#pharmacy-details-right{
+    padding-top: 80px;
+    height: max-content;
+}
+#pharmacy-tbl-wrapper{
+    max-height: 600px;
+    overflow-y: auto;
+    position: absolute;
+    top: 296px;
+    width: 50%;
+}
+  
+#pharmacy-tbl-wrapper::-webkit-scrollbar {
+    width: 8px;
+}
+  
+ #pharmacy-tbl-wrapper::-webkit-scrollbar-thumb {
+    background-color: #59a1f3;
+    border-radius: 5px;
+  }
+  #pharmacy-tbl-wrapper table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#pharmacy-tbl-wrapper thead th {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+#pharmacy-tbl-wrapper tbody {
+    overflow-y: auto;
+}
+/* --------------------- */
+
+#total-details-billing{
+    position: relative;
+}
+.billing-total-details-common > div{
+    justify-content: end;
+    display: flex;
+    justify-content: space-between;
+    width: 350px;
+    margin: 10px 0;
+}
+.billing-total-details-common > div>label{
+    font-size: 15px;
+    font-weight: 550;
+}
+.billing-total-details-common > div>div>label{
+    font-size: 15px;
+}
+#billing-tbl-root{
+    position: relative;
+}
+
+#billing-total-wrapper>div>label, #billing-total-wrapper>div>div>label{
+    font-size: 1.5rem;
+    font-weight: 550;
+}
+
+#pharmacy-tbl thead tr th{
+    background-color: #0077FF;
+    color: #F6F6F9;
+    font-size: 16px;
+    font-weight: 500;
+}
+#pharmacy-tbl thead tr th:first-child{
+    border-radius: 10px 0 0 0 ;
+}
+#pharmacy-tbl thead tr th:last-child{
+    border-radius: 0 10px 0 0 ;
+}
+#pharmacy-tbody tr td{
+    font-size: 14px;
+}
+#pharmacy-tbody tr:hover >td{
+    background-color: #59a1f3;
+    cursor: pointer;
+}
+.text{
+    outline: none;
+    width: 50%;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #2e2e2e;
+    position: relative;
+    left: 13px;
+    bottom: 10px;
+
+}
+.text:focus{
+    border: #3a86dd solid 2px;
+}
+.text2:focus{
+    border: #3a86dd solid 2px;
+}
+#pharmacy-billing-customer{
+    height: 60px;
+    width: 550px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+#pharmacy-billing-customer > label:first-child{
+    position: relative;
+    top: 5px;
+}
+#pharmacy-billing-customer > label:last-child > input{
+    position: relative;
+    left: 15px;
+}
+.content main .insights li:nth-child(1) .bx {
+    background: transparent;
+    color: red;
+    cursor:pointer;
+    font-size: 20px;
+}
+.content main .insights li:nth-child(1) .bx:hover {
+    color: rgb(201, 14, 14);
+}
+#pharmacy-bill thead tr th{
+    background-color: #0077FF;
+    color: #F6F6F9;
+    font-weight: 500;
+    font-size: 16px;
+}
+#pharmacy-bill tbody tr td{
+    font-size: 14px;
+}
+#pharmacy-bill tbody tr:hover td{
+    background-color: #59a1f3;
+}
+#total-details-billing{
+    padding-left: 220px;
+}
+#addtoCartItemName{
+    color: #1976D2;
+    position: relative;
+    bottom: 12px;
+    font-size: 17px;
+}
+#addtoCartItemOnH,#addtoCartItemPrice,#addtoCartItemQty,#addtoCartItemInDade{
+    font-size: 17px;
+    font-weight: 500;
+}
+#addtoCartWrapper{
+    width: 100%;
+    height: 260px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#addtoCartItemOnHWrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 360px;
+}
+#addtoCartItemInDateOnHWrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 360px;
+}
+#addtoCartItemPriceWrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 360px;
+    margin-bottom: 30px;
+}
+#addtoCartItemQtyWrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 360px;
+}
+#billingPopupQty{
+    border: #181a1e solid 0.5px;
+    border-radius: 5px;
+    height: 35px;
+    width: 250px;
+    padding: 10px;
+    font-size: 16px;
+}
+.custom-confirm-button{
+    background-color: #1976D2;
+    height: 44px;
+}
+.swal2-cancel.custom-cancel-button {
+    background-color: rgb(231, 61, 61);
+}
+.addtocartbtnTxt{
+    position: relative;
+    bottom: 6px;
+}
+.container {
+    height: 250px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+    ". ."
+    ". ."
+    ". ."
+    ". ."
+    ". ."
+    ". ."
+    ". .";
+}
+.container div{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+.container div label{
+    text-align: center;
+    font-size: 20px;
+}
+.text2{
+    outline: none;
+    width: 50%;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid #2e2e2e;
+
+}
+
+.Btn {
+    width: 130px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(15, 15, 15);
+    border: none;
+    color: white;
+    font-weight: 600;
+    gap: 8px;
+    cursor: pointer;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.103);
+    position: relative;
+    overflow: hidden;
+    transition-duration: .3s;
+}
+
+.svgIcon {
+    width: 16px;
+}
+
+.svgIcon path {
+    fill: white;
+}
+
+.Btn::before {
+    width: 130px;
+    height: 130px;
+    position: absolute;
+    content: "";
+    background-color: white;
+    border-radius: 50%;
+    left: -100%;
+    top: 0;
+    transition-duration: .3s;
+    mix-blend-mode: difference;
+}
+
+.Btn:hover::before {
+    transition-duration: .3s;
+    transform: translate(100%,-50%);
+    border-radius: 0;
+}
+
+.Btn:active {
+    transform: translate(5px,5px);
+    transition-duration: .3s;
+}
+
+.container :nth-child(14){
+    position: relative;
+    left: 35%;
+}
+.tot_lable{
+    font-size: 20px;
+}
+.selected-row td{
+    background-color: rgba(58, 134, 221, 0.73);
+}

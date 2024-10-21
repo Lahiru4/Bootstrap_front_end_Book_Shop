@@ -1,0 +1,77 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:100,300,400,900,700,500,300,100);
+
+body{
+    font-family: 'Roboto', sans-serif;
+}
+#Order{
+    padding: 5%;
+}
+#order-tbl-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.accordion li {
+    list-style: none;
+    width: 100%;
+    border: 1px solid red;
+}
+.accordion li label {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    font-size: 18px;
+    font-weight: 500;
+    border: 1px solid red;
+    margin-bottom: 2px;
+    cursor: pointer;
+    position: relative;
+}
+
+/*label::after {
+    content: '+';
+    font-size: 34px;
+    position: absolute;
+    right: 20px;
+    transition: transform 0.5s;
+}*/
+
+input[type="radio"] {
+    display: none;
+}
+
+.accordion .content {
+    border: 1px solid red;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s, padding 0.5s;
+}
+
+.accordion input[type="radio"]:checked + label::after {
+    transform: rotate(135deg);
+}
+
+.accordion input[type="radio"]:checked + label + .content {
+    max-height: 100%;
+    padding: 30px 9px;
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+td{
+    padding: 5px 0 5px 15px;
+}
+.tabletitle{
+    padding: 5px;
+    background: #1976D2;
+    color: #EEE;
+}
+.service{border: 1px solid #EEE;}
+.item{width: 50%;}
+.itemtext{font-size: .9em;}
+#orderlog-tbl tr td:last-child:hover{
+    color: #D32F2F;
+}
